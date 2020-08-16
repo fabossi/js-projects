@@ -1,24 +1,27 @@
-const container = document.getElementById('container');
-const text = document.getElementById('text');
+const container = document.querySelector('.container');
 
-const totalTime = 7500;
-const breatheTime = (totalTime / 5) * 2;
-const holdTime = totalTime / 5;
+const text = document.querySelector('#text');
 
-breathAnimation();
+const total_time = 7500;
+
+const breath_time = (total_time / 5) * 2;
+
+const hold_time = total_time / 5
+
+breathAnimation()
 
 function breathAnimation() {
-  text.innerText = 'Breathe In!';
-  container.className = 'container grow';
+  text.innerHTML = 'Breath In';
+  container.className = 'container grow'
 
   setTimeout(() => {
-    text.innerText = 'Hold';
+    text.innerText = 'Hold'
 
     setTimeout(() => {
-      text.innerText = 'Breathe Out!';
-      container.className = 'container shrink';
-    }, holdTime);
-  }, breatheTime);
+      text.innerText = 'Breath Out'
+      container.className = 'container shrink'
+    }, hold_time);
+  }, breath_time);
 }
 
-setInterval(breathAnimation, totalTime);
+setInterval(breathAnimation, total_time);
